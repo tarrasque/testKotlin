@@ -1,0 +1,73 @@
+
+fun main() {
+    val age = 40
+	val dage = age * 365  + (age / 4)
+    val name = "Lucia"
+    val layers = (age/10) + 1
+    
+    println("Happy Birthday, ${name}!")
+    
+    // Let's print a cake!
+    // println("   ,,,,,   ")
+    // println("   |||||   ")
+    // println(" =========")
+    // println("@@@@@@@@@@@")
+    // println("{~@~@~@~@~}")
+    // println("@@@@@@@@@@@")
+    
+    println("")
+    
+    printCakeCandles(age)
+    printCakeTop(age)
+    printCakeBottom(age, layers)
+    
+    
+    
+    // This prints an empty line.
+    println("")
+
+    println("You are already ${age}!")
+    println("${age} is the very best age to celebrate!")
+    println("Your age in days is ${dage}")
+}
+    fun printCakeTop(age: Int) {
+        repeat(age + 2) {
+            print("=")
+        }
+        println()
+    }
+    fun printCakeCandles(age: Int) {
+    print(" ")
+    repeat(age) {
+        print(",")
+    }
+    println()
+    print(" ")
+    repeat(age) {
+        print("|")
+    }
+    println()
+    }
+	fun printCakeBottom(age: Int, layers: Int) {
+    	
+        repeat(layers){
+             repeat(age + 2) {
+                 print("@")
+             }
+             println()
+             print("{")
+             repeat(age/2) {
+                 print("~@")
+             }
+             if (age % 2 == 0)
+             print("}")
+             else
+             print("~}")
+             println()
+         }
+         repeat(age + 2) {
+             print("@")
+         }
+         println()
+         println()
+	}
